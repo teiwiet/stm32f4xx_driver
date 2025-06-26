@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_rnglists 0000002c  00000000  00000000  00010460  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00000f68  00000000  00000000  0001048c  2**0
+ 17 .debug_macro  000011ee  00000000  00000000  0001048c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000004d8  00000000  00000000  000113f4  2**0
+ 18 .debug_line   000004bf  00000000  00000000  0001167a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00003bb1  00000000  00000000  000118cc  2**0
+ 19 .debug_str    00004b35  00000000  00000000  00011b39  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00000054  00000000  00000000  00015480  2**2
+ 20 .debug_frame  00000054  00000000  00000000  00016670  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000004c  00000000  00000000  000154d4  2**0
+ 21 .debug_line_str 0000004c  00000000  00000000  000166c4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -80,15 +80,15 @@ Disassembly of section .text:
 
 080001d8 <main>:
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
-  #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+#warning                                                                       \
+    "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
-int main(void)
-{
+int main(void) {
  80001d8:	b480      	push	{r7}
  80001da:	af00      	add	r7, sp, #0
-    /* Loop forever */
-	for(;;);
+  /* Loop forever */
+  for (;;)
  80001dc:	e7fe      	b.n	80001dc <main+0x4>
 	...
 
