@@ -18,13 +18,26 @@
 
 #include "../drivers/Inc/stm32f411xx.h"
 #include <stdint.h>
-#if !defined(__SOFT_FP__) && defined(__ARM_FP)
-#warning                                                                       \
-    "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-#endif
+
+
+void delay(){
+    for(uint32_t i = 0;i < 500000;i++);
+}
 
 int main(void) {
-  /* Loop forever */
-  for (;;)
-    ;
+    GPIO_Handle_t GpioLed;
+    // GpioLed.pGPIOx = GPIOD;
+    // GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
+    // GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_;
+    // GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+    // GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+    // GpioLed.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+    // GPIO_PeriClockControl(GPIOD,ENABLE);
+    // GPIO_Init(&GpioLed);
+    GPIO_DeInit(GPIOD);
+    // while(1){
+    //     GPIO_ToggleOutPutPin(GPIOD,GPIO_PIN_NO_12);
+    //     delay();
+    // }
+    return 0;
 }
